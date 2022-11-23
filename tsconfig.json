@@ -18,11 +18,11 @@
   "includes": [
     "**/*.ts",
     "**/*.tsx",
+    ".eslintrc.js",
     "jest.config.js",
     "jest.setup.js"
   ],
   "exclude": [
-    "node_modules",
-    "__tests__/**/*-test.ts"
+    "node_modules"
   ]
 }

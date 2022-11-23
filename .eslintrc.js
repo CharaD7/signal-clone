@@ -12,22 +12,22 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:jest/recommended',
     'plugin:prettier/recommended',
-    '@react-native-community',
-    'prettier/react'
+    // '@react-native-community',
+    'prettier'
   ],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
   },
-  ignorePatterns: ['!.*', 'dist', 'node_modules'],
+  ignorePatterns: ['!.*', '**/*.js', 'dist', 'node_modules'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: latest,
-    sourceType: 'module',
+    ecmaVersion: 13,
     project: './tsconfig.json',
+    sourceType: 'module',
   },
   plugins: ['react', 'react-native', 'jest', 'import'],
   rules: {
@@ -62,14 +62,11 @@ module.exports = {
     'linebreak-style': 'off',
     "max-lines": ["error", 80],
     "no-extra-semi": ["error"],
-    'prettier/prettier': [
-      'error',
-      {
-        endOfLine: 'auto',
-      },
-    ],
-    quotes: ['error', 'double'],
-    "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
+    "no-use-before-define": "off",
+    // quotes: ['error', 'double'],
+    "react/jsx-filename-extension": [2, { extensions: [".js", ".jsx", ".ts", ".tsx"] }],
+    "react-native/no-inline-styles": 2,
+    "react-native/no-color-literals": 2,
     "semi": [
       "error",
       "always",
@@ -77,7 +74,8 @@ module.exports = {
         omitLastInOneLineBlock: false
       }
     ],
-    'sort-imports': ['error', {ignoreCase: true, ignoreDeclarationSort: true}],
+    'sort-imports': ['error', { ignoreCase: true, ignoreDeclarationSort: true }],
+    "@typescript-eslint/no-use-before-define": "error"
   },
   "settings": {
     "import/parsers": {

@@ -1,5 +1,7 @@
+/* eslint-disable react-native/no-inline-styles */
+import { SafeAreaView } from 'react-native';
+
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
@@ -13,10 +15,10 @@ export default function App() {
     return null;
   } else {
     return (
-      <SafeAreaProvider>
+      <SafeAreaView style={{ flex: 1 }}>
         <Navigation colorScheme={colorScheme} />
         <StatusBar />
-      </SafeAreaProvider>
+      </SafeAreaView>
     );
   }
 }
