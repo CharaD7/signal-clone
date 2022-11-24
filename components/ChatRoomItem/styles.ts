@@ -1,33 +1,55 @@
 import { StyleSheet } from 'react-native';
 
+const colors = {
+  badgebg: '#498be8',
+  grayText: '#979899',
+  white: '#ffffff',
+};
+
 const styles = StyleSheet.create({
   badgeContainer: {
-    backgroundColor: '#498be8',
-    borderColor: '#fff',
-    borderRadius: 10,
+    alignItems: 'center',
+    backgroundColor: colors.badgebg,
+    borderColor: colors.white,
+    borderRadius: 7.5,
     borderWidth: 1,
-    // padding: 5,
-    height: 10,
-    width: 10,
+    height: 15,
+    justifyContent: 'center',
+    left: 35,
+    top: 2,
+    position: 'absolute',
+    width: 15,
+  },
+  badgeText: {
+    color: colors.white,
+    fontSize: 12,
+    fontWeight: 'bold',
     position: 'absolute',
   },
   container: {
-    backgroundColor: '#ffffff',
-    flex: 1,
+    backgroundColor: colors.white,
     flexDirection: 'row',
-    margin: 10,
+    margin: 8,
   },
   image: {
     borderRadius: 25,
     height: 50,
     width: 50,
   },
+  name: {
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
   rightContainer: {
     flex: 1,
+    margin: 5,
   },
   row: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+  },
+  text: {
+    color: colors.grayText,
   },
 });
 
