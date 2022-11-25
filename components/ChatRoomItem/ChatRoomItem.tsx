@@ -4,24 +4,29 @@ import { Image, Text, View } from 'react-native';
 import styles from './styles';
 
 const ChatRoomItem = ({ chatRoom }) => {
+  const user = chatRoom.users[1];
   return (
     <View style={styles.container}>
       <Image
         style={styles.image}
         source={{
-          uri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim.jpg',
+          uri: user.imageUri,
         }}
       />
-      <View style={styles.badgeContainer}>
-        <Text style={styles.badgeText}>4</Text>
-      </View>
+
+      {chatRoom.newMessages && (
+        <View style={styles.badgeContainer}>
+          <Text style={styles.badgeText}>{chatRoom.newMessages}</Text>
+        </View>
+      )}
+
       <View style={styles.rightContainer}>
         <View style={styles.row}>
-          <Text style={styles.name}>Elon Musk</Text>
-          <Text style={styles.text}>11:11 AM</Text>
+          <Text style={styles.name}>{user.name}</Text>
+          <Text style={styles.text}>{chatRoom.lastMessage.createdAt}</Text>
         </View>
         <Text numberOfLines={1} style={styles.text}>
-          Hola Hola coca cola asdf asdf in buha asdf asdf in buha
+          {chatRoom.lastMessage.content}
         </Text>
       </View>
     </View>
