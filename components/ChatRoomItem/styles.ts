@@ -1,10 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-const colors = {
-  badgebg: '#498be8',
-  grayText: '#979899',
-  white: '#ffffff',
-};
+import colors from '../Colors';
 
 const styles = StyleSheet.create({
   badgeContainer: {

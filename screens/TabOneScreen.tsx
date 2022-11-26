@@ -3,7 +3,14 @@ import { FlatList, StyleSheet, View } from 'react-native';
 
 import chatRoomsData from '../assets/dummy-data/ChatRooms';
 import ChatRoomItem from '../components/ChatRoomItem';
-// import EditScreenInfo from '../components/EditScreenInfo';
+import colors from '../components/Colors';
+
+const styles = StyleSheet.create({
+  page: {
+    backgroundColor: colors.white,
+    flex: 1,
+  },
+});
 
 export default function TabOneScreen() {
   return (
@@ -15,10 +22,3 @@ export default function TabOneScreen() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  page: {
-    backgroundColor: 'white',
-    flex: 1,
-  },
-});
