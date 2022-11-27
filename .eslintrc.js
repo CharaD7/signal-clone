@@ -60,7 +60,6 @@ module.exports = {
       },
     ],
     'linebreak-style': 'off',
-    "max-lines": ["error", 80],
     "no-extra-semi": ["error"],
     "no-use-before-define": "off",
     // quotes: ['error', 'double'],
