@@ -5,12 +5,6 @@
   "scripts": {
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "lint-staged": {
-      "*.{js,jsx,ts,tsx}": [
-        "prettier --write .",
-        "eslint --fix"
-      ]
-    },
     "prepare": "husky install",
     "reset": "expo start --clear",
     "start": "expo start",
@@ -21,6 +15,12 @@
     "preset": "jest-expo",
     "transformIgnorePatterns": [
       "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg)"
+    ]
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write .",
+      "eslint --fix"
     ]
   },
   "dependencies": {
