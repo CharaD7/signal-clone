@@ -15,6 +15,8 @@ module.exports = function (api) {
             '~screens': ['./screens'],
             '~types': ['./types'],
           },
+          extensions: ['.js', '.jsx', '.ts', '.tsx'],
+          root: ['./'],
         },
       ],
     ],

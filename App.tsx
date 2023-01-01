@@ -1,7 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
-import { SafeAreaView } from 'react-native';
-
 import { StatusBar } from 'expo-status-bar';
+import { SafeAreaView } from 'react-native';
 
 import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
