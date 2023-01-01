@@ -5,9 +5,6 @@
  * https://reactnavigation.org/docs/getting-started
  *
  */
-import * as React from 'react';
-import { ColorSchemeName, Pressable } from 'react-native';
-
 import { FontAwesome } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {
@@ -16,18 +13,21 @@ import {
   NavigationContainer,
 } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import * as React from 'react';
+import { ColorSchemeName, Pressable } from 'react-native';
 
-import Colors from '../constants/Colors';
-import useColorScheme from '../hooks/useColorScheme';
-import HomeScreen from '../screens/HomeScreen';
-import ModalScreen from '../screens/ModalScreen';
-import NotFoundScreen from '../screens/NotFoundScreen';
-import TabTwoScreen from '../screens/TabTwoScreen';
+import Colors from '~constants/Colors';
+import useColorScheme from '~hooks/useColorScheme';
+import HomeScreen from '~screens/HomeScreen';
+import ModalScreen from '~screens/ModalScreen';
+import NotFoundScreen from '~screens/NotFoundScreen';
+import TabTwoScreen from '~screens/TabTwoScreen';
 import {
   RootStackParamList,
   RootTabParamList,
   RootTabScreenProps,
-} from '../types';
+} from '~types/types';
+
 import LinkingConfiguration from './LinkingConfiguration';
 
 export default function Navigation({
