@@ -18,6 +18,7 @@ export default function HomeScreen() {
       <FlatList
         data={chatRoomsData}
         renderItem={({ item }) => <ChatRoomItem chatRoom={item} />}
+        showsVerticalScrollIndicator={false}
       />
     </View>
   );
