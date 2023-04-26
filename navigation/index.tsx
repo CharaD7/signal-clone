@@ -18,6 +18,7 @@ import { ColorSchemeName, Pressable } from 'react-native';
 
 import Colors from '~constants/Colors';
 import useColorScheme from '~hooks/useColorScheme';
+import ChatRoomScreen from '~screens/ChatRoomScreen';
 import HomeScreen from '~screens/HomeScreen';
 import ModalScreen from '~screens/ModalScreen';
 import NotFoundScreen from '~screens/NotFoundScreen';
@@ -53,7 +54,12 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen
+        name="ChatRoom"
+        component={ChatRoomScreen}
+        options={{ headerShown: true }}
+      />
       <Stack.Screen
         name="Root"
         component={BottomTabNavigator}
