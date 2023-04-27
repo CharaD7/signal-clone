@@ -5,20 +5,38 @@ import { StyleSheet, Text, View } from 'react-native';
 import colors from '~components/Colors';
 
 const Message = () => {
+  const isMe = true;
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Message</Text>
+    <View
+      style={[
+        styles.container,
+        {
+          backgroundColor: isMe ? colors.graybg : colors.badgebg,
+          marginLeft: isMe ? 'auto' : 10,
+        },
+      ]}
+    >
+      <Text
+        style={[
+          styles.text,
+          {
+            color: isMe ? colors.black : colors.white,
+          },
+        ]}
+      >
+        Message
+      </Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.badgebg,
     padding: 10,
     margin: 10,
     borderRadius: 10,
-    width: '75%',
+    maxWidth: '75%',
   },
   text: {
     color: colors.white,
