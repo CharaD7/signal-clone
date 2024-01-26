@@ -1,14 +1,18 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { FlatList, StyleSheet, View } from 'react-native';
 
+import chatRoomData from '~assets/dummy-data/Chats';
 import colors from '~components/Colors';
 import Message from '~components/Message/Message';
 
 const ChatRoomScreen = () => {
   return (
     <View style={styles.page}>
-      <Message />
+      <FlatList
+        data={chatRoomData.messages}
+        renderItem={({ item }) => <Message message={item} />}
+      />
     </View>
   );
 };
