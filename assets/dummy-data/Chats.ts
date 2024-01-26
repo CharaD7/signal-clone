@@ -1,4 +1,4 @@
-export default {
+const chatRoomData = {
   id: '1',
   users: [
     {
@@ -80,3 +80,5 @@ export default {
     },
   ],
 };
+
+export default chatRoomData;
