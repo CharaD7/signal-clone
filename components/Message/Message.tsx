@@ -13,11 +13,7 @@ const Message = ({ message }) => {
     <View
       style={[
         styles.container,
-        {
-          backgroundColor: isMe ? colors.graybg : colors.badgebg,
-          marginLeft: isMe ? 'auto' : 10,
-          marginRight: isMe ? 10 : 'auto',
-        },
+        isMe ? styles.rightContainer : styles.leftContainer,
       ]}
     >
       <Text
@@ -46,5 +42,15 @@ const styles = StyleSheet.create({
   },
   text: {
     color: colors.white,
+  },
+  leftContainer: {
+    backgroundColor: colors.badgebg,
+    marginLeft: 10,
+    marginRight: 'auto',
+  },
+  rightContainer: {
+    backgroundColor: colors.graybg,
+    marginLeft: 'auto',
+    marginRight: 10,
   },
 });
