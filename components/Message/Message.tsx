@@ -4,8 +4,10 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import colors from '~components/Colors';
 
-const Message = () => {
-  const isMe = true;
+const myID = 'u1';
+
+const Message = ({ message }) => {
+  const isMe = message.user.id === myID;
 
   return (
     <View
@@ -14,6 +16,7 @@ const Message = () => {
         {
           backgroundColor: isMe ? colors.graybg : colors.badgebg,
           marginLeft: isMe ? 'auto' : 10,
+          marginRight: isMe ? 10 : 'auto',
         },
       ]}
     >
@@ -25,11 +28,13 @@ const Message = () => {
           },
         ]}
       >
-        Message
+        {message.content}
       </Text>
     </View>
   );
 };
+
+export default Message;
 
 const styles = StyleSheet.create({
   container: {
@@ -37,10 +42,9 @@ const styles = StyleSheet.create({
     margin: 10,
     borderRadius: 10,
     maxWidth: '75%',
+    marginRight: 'auto',
   },
   text: {
     color: colors.white,
   },
 });
-
-export default Message;
