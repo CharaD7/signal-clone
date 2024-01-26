@@ -11,6 +11,7 @@ const ChatRoomScreen = () => {
     <View style={styles.page}>
       <FlatList
         data={chatRoomData.messages}
+        inverted
         renderItem={({ item }) => <Message message={item} />}
       />
     </View>
