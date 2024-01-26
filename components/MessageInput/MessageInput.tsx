@@ -8,7 +8,8 @@ const MessageInput = () => {
   return (
     <View style={styles.container}>
       <View style={styles.inputContainer}>
-        <TextInput />
+        <Ionicons name="happy-outline" size={24} color={colors.grayText} />
+        <TextInput style={styles.input} />
       </View>
       <View style={styles.buttonContainer}>
         <Ionicons name="ios-send" size={24} color={colors.white} />
@@ -22,10 +23,20 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     padding: 10,
   },
+  input: {
+    flex: 1,
+    marginHorizontal: 3,
+  },
   inputContainer: {
     backgroundColor: colors.graybg,
     flex: 1,
     marginRight: 10,
+    borderWidth: 1,
+    borderColor: colors.graybg,
+    borderRadius: 25,
+    alignItems: 'center',
+    flexDirection: 'row',
+    padding: 10,
   },
   buttonContainer: {
     width: 50,
