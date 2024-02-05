@@ -13,19 +13,19 @@ const MessageInput = () => {
   return (
     <View style={styles.container}>
       <View style={styles.inputContainer}>
-        <Ionicons name="happy-outline" size={24} color={colors.grayText} />
+        <Ionicons name="happy-outline" size={24} color={colors.blackTint} />
         <TextInput style={styles.input} />
         <Feather
           name="camera"
           size={24}
-          color={colors.grayText}
+          color={colors.blackTint}
           style={styles.icon}
         />
         <MaterialCommunityIcons
           name="microphone-outline"
           size={24}
           style={styles.icon}
-          color={colors.grayText}
+          color={colors.blackTint}
         />
       </View>
       <View style={styles.buttonContainer}>
