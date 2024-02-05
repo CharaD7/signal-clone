@@ -28,7 +28,9 @@ import {
   RootTabScreenProps,
 } from '~types/types';
 
+// eslint-disable-next-line import/order
 import LinkingConfiguration from './LinkingConfiguration';
+// eslint-disable-next-line import/order
 
 export default function Navigation({
   colorScheme,

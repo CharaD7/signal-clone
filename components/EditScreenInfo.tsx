@@ -1,6 +1,7 @@
 import * as WebBrowser from 'expo-web-browser';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 
+// eslint-disable-next-line import/order
 import Colors from '~constants/Colors';
 
 import { MonoText } from './StyledText';
