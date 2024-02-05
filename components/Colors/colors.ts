@@ -4,6 +4,7 @@ const colors = {
   blackTint: '#595959',
   grayText: '#979899',
   grayBorder: '#dddfdc',
+  grayInput: '#eeeeee',
   graybg: '#efefef',
   white: '#ffffff',
 };

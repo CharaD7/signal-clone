@@ -14,7 +14,7 @@ const MessageInput = () => {
     <View style={styles.container}>
       <View style={styles.inputContainer}>
         <Ionicons name="happy-outline" size={24} color={colors.blackTint} />
-        <TextInput style={styles.input} />
+        <TextInput style={styles.input} placeholder="Signal message..." />
         <Feather
           name="camera"
           size={24}
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 3,
   },
   inputContainer: {
-    backgroundColor: colors.graybg,
+    backgroundColor: colors.grayInput,
     flex: 1,
     marginRight: 10,
     borderWidth: 1,
