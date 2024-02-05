@@ -5,12 +5,29 @@ import {
   MaterialCommunityIcons,
 } from '@expo/vector-icons';
 import React, { useState } from 'react';
-import { StyleSheet, TextInput, View } from 'react-native';
+import { Pressable, StyleSheet, TextInput, View } from 'react-native';
 
-import colors from '~components/Colors/colors';
+import styles from './styles';
 
 const MessageInput = () => {
   const [message, setMessage] = useState<string>('');
+
+  const sendMessage = () => {
+    console.warn(`Sending message: ${message}`);
+    setMessage('');
+  };
+
+  const onPlusClicked = () => {
+    console.warn('On Plus clicked');
+  };
+
+  const onPress = () => {
+    if (message) {
+      sendMessage();
+    } else {
+      onPlusClicked();
+    }
+  };
 
   return (
     <View style={styles.container}>
@@ -35,48 +52,15 @@ const MessageInput = () => {
           color={colors.blackTint}
         />
       </View>
-      <View style={styles.buttonContainer}>
+      <Pressable onPress={onPress} style={styles.buttonContainer}>
         {!message ? (
           <AntDesign name="plus" size={24} color={colors.white} />
         ) : (
           <Ionicons name="ios-send" size={24} color={colors.white} />
         )}
-      </View>
+      </Pressable>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    padding: 10,
-  },
-  icon: {
-    marginHorizontal: 3,
-  },
-  input: {
-    flex: 1,
-    marginHorizontal: 3,
-  },
-  inputContainer: {
-    backgroundColor: colors.grayInput,
-    flex: 1,
-    marginRight: 10,
-    borderWidth: 1,
-    borderColor: colors.grayBorder,
-    borderRadius: 25,
-    alignItems: 'center',
-    flexDirection: 'row',
-    padding: 5,
-  },
-  buttonContainer: {
-    width: 45,
-    height: 45,
-    backgroundColor: colors.badgebg,
-    borderRadius: 25,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
 
 export default MessageInput;
