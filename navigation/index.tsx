@@ -31,6 +31,7 @@ import {
 // eslint-disable-next-line import/order
 import LinkingConfiguration from './LinkingConfiguration';
 // eslint-disable-next-line import/order
+import styles from './styles';
 
 export default function Navigation({
   colorScheme,
@@ -69,6 +70,15 @@ function RootNavigator() {
     </Stack.Navigator>
   );
 }
+
+const HomeHeader = (props) => {
+  return (
+    <View style={styles.container}>
+      <Image />
+      <Text>Home</Text>
+    </View>
+  );
+};
 
 /**
  * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
