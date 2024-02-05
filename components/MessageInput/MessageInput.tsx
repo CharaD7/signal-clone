@@ -5,8 +5,11 @@ import {
   MaterialCommunityIcons,
 } from '@expo/vector-icons';
 import React, { useState } from 'react';
-import { Pressable, StyleSheet, TextInput, View } from 'react-native';
+import { Pressable, TextInput, View } from 'react-native';
 
+import colors from '~components/Colors';
+
+// eslint-disable-next-line import/order
 import styles from './styles';
 
 const MessageInput = () => {
