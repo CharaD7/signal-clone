@@ -13,20 +13,12 @@ import {
 } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
-import { ColorSchemeName, Pressable } from 'react-native';
+import { ColorSchemeName, Image, Pressable, Text, View } from 'react-native';
 
-import Colors from '~constants/Colors';
-import useColorScheme from '~hooks/useColorScheme';
 import ChatRoomScreen from '~screens/ChatRoomScreen';
 import HomeScreen from '~screens/HomeScreen';
-import ModalScreen from '~screens/ModalScreen';
 import NotFoundScreen from '~screens/NotFoundScreen';
-import TabTwoScreen from '~screens/TabTwoScreen';
-import {
-  RootStackParamList,
-  RootTabParamList,
-  RootTabScreenProps,
-} from '~types/types';
+import { RootStackParamList } from '~types/types';
 
 // eslint-disable-next-line import/order
 import LinkingConfiguration from './LinkingConfiguration';
@@ -57,7 +49,11 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 function RootNavigator() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="HomeScreen" component={HomeScreen} />
+      <Stack.Screen
+        name="HomeScreen"
+        component={HomeScreen}
+        options={{ headerTitle: HomeHeader }}
+      />
       <Stack.Screen name="ChatRoom" component={ChatRoomScreen} />
       <Stack.Screen
         name="NotFound"
