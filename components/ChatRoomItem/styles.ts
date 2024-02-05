@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
   container: {
-    backgroundColor: colors.white,
+    backgroundColor: colors.graybg,
     flexDirection: 'row',
     margin: 8,
   },
