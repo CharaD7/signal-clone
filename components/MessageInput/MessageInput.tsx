@@ -1,4 +1,4 @@
-import { Ionicons } from '@expo/vector-icons';
+import { AntDesign, Ionicons } from '@expo/vector-icons';
 import React from 'react';
 import { StyleSheet, TextInput, View } from 'react-native';
 
@@ -12,7 +12,8 @@ const MessageInput = () => {
         <TextInput style={styles.input} />
       </View>
       <View style={styles.buttonContainer}>
-        <Ionicons name="ios-send" size={24} color={colors.white} />
+        <AntDesign name="plus" size={24} color={colors.white} />
+        {/* <Ionicons name="ios-send" size={24} color={colors.white} /> */}
       </View>
     </View>
   );
