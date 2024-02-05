@@ -4,17 +4,24 @@ import {
   Ionicons,
   MaterialCommunityIcons,
 } from '@expo/vector-icons';
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, TextInput, View } from 'react-native';
 
 import colors from '~components/Colors/colors';
 
 const MessageInput = () => {
+  const [message, setMessage] = useState<string>('');
+
   return (
     <View style={styles.container}>
       <View style={styles.inputContainer}>
         <Ionicons name="happy-outline" size={24} color={colors.blackTint} />
-        <TextInput style={styles.input} placeholder="Signal message..." />
+        <TextInput
+          style={styles.input}
+          value={message}
+          onChangeText={setMessage}
+          placeholder="Signal message..."
+        />
         <Feather
           name="camera"
           size={24}
@@ -29,8 +36,11 @@ const MessageInput = () => {
         />
       </View>
       <View style={styles.buttonContainer}>
-        <AntDesign name="plus" size={24} color={colors.white} />
-        {/* <Ionicons name="ios-send" size={24} color={colors.white} /> */}
+        {!message ? (
+          <AntDesign name="plus" size={24} color={colors.white} />
+        ) : (
+          <Ionicons name="ios-send" size={24} color={colors.white} />
+        )}
       </View>
     </View>
   );
