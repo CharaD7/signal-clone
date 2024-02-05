@@ -1,4 +1,9 @@
-import { AntDesign, Ionicons } from '@expo/vector-icons';
+import {
+  AntDesign,
+  Feather,
+  Ionicons,
+  MaterialCommunityIcons,
+} from '@expo/vector-icons';
 import React from 'react';
 import { StyleSheet, TextInput, View } from 'react-native';
 
@@ -10,6 +15,18 @@ const MessageInput = () => {
       <View style={styles.inputContainer}>
         <Ionicons name="happy-outline" size={24} color={colors.grayText} />
         <TextInput style={styles.input} />
+        <Feather
+          name="camera"
+          size={24}
+          color={colors.grayText}
+          style={styles.icon}
+        />
+        <MaterialCommunityIcons
+          name="microphone-outline"
+          size={24}
+          style={styles.icon}
+          color={colors.grayText}
+        />
       </View>
       <View style={styles.buttonContainer}>
         <AntDesign name="plus" size={24} color={colors.white} />
@@ -24,6 +41,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     padding: 10,
   },
+  icon: {
+    marginHorizontal: 3,
+  },
   input: {
     flex: 1,
     marginHorizontal: 3,
@@ -33,7 +53,7 @@ const styles = StyleSheet.create({
     flex: 1,
     marginRight: 10,
     borderWidth: 1,
-    borderColor: colors.graybg,
+    borderColor: colors.grayBorder,
     borderRadius: 25,
     alignItems: 'center',
     flexDirection: 'row',
