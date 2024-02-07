@@ -1,8 +1,11 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 
 import colors from '~components/Colors';
+
+// eslint-disable-next-line import/order
+import styles from './styles';
 
 const myID = 'u1';
 
@@ -31,26 +34,3 @@ const Message = ({ message }) => {
 };
 
 export default Message;
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 10,
-    margin: 10,
-    borderRadius: 10,
-    maxWidth: '75%',
-    marginRight: 'auto',
-  },
-  text: {
-    color: colors.white,
-  },
-  leftContainer: {
-    backgroundColor: colors.badgebg,
-    marginLeft: 10,
-    marginRight: 'auto',
-  },
-  rightContainer: {
-    backgroundColor: colors.graybg,
-    marginLeft: 'auto',
-    marginRight: 10,
-  },
-});
