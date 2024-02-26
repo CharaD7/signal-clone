@@ -13,7 +13,14 @@ import {
 } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
-import { ColorSchemeName, Image, Pressable, Text, View } from 'react-native';
+import {
+  ColorSchemeName,
+  Image,
+  Pressable,
+  Text,
+  useWindowDimensions,
+  View,
+} from 'react-native';
 
 import Colors from '~components/Colors';
 import ChatRoomScreen from '~screens/ChatRoomScreen';
@@ -58,7 +65,7 @@ function RootNavigator() {
       <Stack.Screen
         name="ChatRoom"
         component={ChatRoomScreen}
-        options={{ headerTitle: ChatRoomHeader, headerBackVisible: false }}
+        options={{ headerTitle: ChatRoomHeader }}
       />
       <Stack.Screen
         name="NotFound"
@@ -89,14 +96,17 @@ const HomeHeader = (props) => {
 };
 
 const ChatRoomHeader = (props) => {
+  const { width } = useWindowDimensions();
+
   return (
-    <View style={styles.roomHeaderContainer}>
+    <View style={[styles.roomHeaderContainer, { width: width - 70 }]}>
       <Image
         source={{ uri: 'https://i.pravatar.cc/300' }}
-        style={styles.image}
+        style={styles.roomHeaderImage}
       />
       <Text style={styles.text}>Signal</Text>
-      <View style={styles.icons}>
+      <View style={styles.roomHeaderIcons}>
+        {/*<Ionicons name="videocam" size={24} color={Colors.blackTint} />*/}
         <Ionicons name="camera" size={24} color={Colors.blackTint} />
         <Feather name="edit-2" size={24} color={Colors.blackTint} />
       </View>

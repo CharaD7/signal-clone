@@ -1,6 +1,4 @@
-import { Dimensions, StyleSheet } from 'react-native';
-
-const { width } = Dimensions.get('window');
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -13,8 +11,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     padding: 10,
-    width: width - 50,
+    backgroundColor: '#eee',
     alignItems: 'center',
+  },
+  roomHeaderImage: {
+    width: 30,
+    height: 30,
+    borderRadius: 25,
+    right: 35,
   },
   image: {
     width: 30,
@@ -26,6 +30,12 @@ const styles = StyleSheet.create({
     flex: 1,
     fontWeight: 'bold',
     textAlign: 'center',
+  },
+  roomHeaderIcons: {
+    flexDirection: 'row',
+    width: 60,
+    right: 15,
+    justifyContent: 'space-between',
   },
   icons: {
     flexDirection: 'row',
