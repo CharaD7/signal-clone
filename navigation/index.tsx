@@ -13,14 +13,7 @@ import {
 } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
-import {
-  ColorSchemeName,
-  Image,
-  Pressable,
-  Text,
-  useWindowDimensions,
-  View,
-} from 'react-native';
+import { ColorSchemeName, Image, Pressable, Text, View } from 'react-native';
 
 import Colors from '~components/Colors';
 import ChatRoomScreen from '~screens/ChatRoomScreen';
@@ -58,11 +51,15 @@ function RootNavigator() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="HomeScreen"
+        name="Home"
         component={HomeScreen}
         options={{ headerTitle: HomeHeader }}
       />
-      <Stack.Screen name="ChatRoom" component={ChatRoomScreen} />
+      <Stack.Screen
+        name="ChatRoom"
+        component={ChatRoomScreen}
+        options={{ headerTitle: ChatRoomHeader, headerBackVisible: false }}
+      />
       <Stack.Screen
         name="NotFound"
         component={NotFoundScreen}
@@ -91,6 +88,21 @@ const HomeHeader = (props) => {
   );
 };
 
+const ChatRoomHeader = (props) => {
+  return (
+    <View style={styles.roomHeaderContainer}>
+      <Image
+        source={{ uri: 'https://i.pravatar.cc/300' }}
+        style={styles.image}
+      />
+      <Text style={styles.text}>Signal</Text>
+      <View style={styles.icons}>
+        <Ionicons name="camera" size={24} color={Colors.blackTint} />
+        <Feather name="edit-2" size={24} color={Colors.blackTint} />
+      </View>
+    </View>
+  );
+};
 /**
  * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
  */
