@@ -99,12 +99,12 @@ const ChatRoomHeader = (props) => {
   const { width } = useWindowDimensions();
 
   return (
-    <View style={[styles.container, { width: width - 70 }]}>
+    <View style={[styles.container, { width: width - 80 }]}>
       <Image
         source={{ uri: 'https://i.pravatar.cc/300' }}
         style={[styles.image, { right: 35 }]}
       />
-      <Text style={styles.text}>Signal</Text>
+      <Text style={[styles.text, { right: 20 }]}>Signal</Text>
       <View style={styles.icons}>
         {/*<Ionicons name="videocam" size={24} color={Colors.blackTint} /> */}
         <Ionicons name="camera" size={24} color={Colors.blackTint} />
