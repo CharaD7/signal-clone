@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import { useRoute } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import React from 'react';
 import { FlatList, SafeAreaView, StyleSheet } from 'react-native';
 
@@ -10,6 +10,11 @@ import MessageInput from '~components/MessageInput';
 
 const ChatRoomScreen = () => {
   const route = useRoute();
+
+  console.log(`Route data : ${route.params?.id}`);
+  console.log(`Route specified content : ${route.name}`);
+
+  useNavigation().setOptions({ title: 'Elon Musk' });
 
   return (
     <SafeAreaView style={styles.page}>
