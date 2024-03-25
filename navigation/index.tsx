@@ -104,7 +104,11 @@ const ChatRoomHeader = (props) => {
         source={{ uri: 'https://i.pravatar.cc/300' }}
         style={[styles.image, { right: 35 }]}
       />
-      <Text style={[styles.text, { right: 110 }]}>Signal</Text>
+      {typeof props.children === 'string' && props.children.includes(' ') ? (
+        <Text style={[styles.text, { right: 95 }]}>{props.children}</Text>
+      ) : (
+        <Text style={[styles.text, { right: 115 }]}>{props.children}</Text>
+      )}
       <View style={styles.icons}>
         {/*<Ionicons name="videocam" size={24} color={Colors.blackTint} /> */}
         <Ionicons name="camera" size={24} color={Colors.blackTint} />
