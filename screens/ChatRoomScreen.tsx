@@ -14,7 +14,9 @@ const ChatRoomScreen = () => {
   console.log(`Route data : ${route.params?.id}`);
   console.log(`Route specified content : ${route.name}`);
 
-  useNavigation().setOptions({ title: 'Elon Musk' });
+  const navigation = useNavigation();
+
+  navigation.setOptions({ title: 'Elon Musk' });
 
   return (
     <SafeAreaView style={styles.page}>
