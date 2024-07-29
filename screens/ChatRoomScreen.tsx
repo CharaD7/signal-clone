@@ -4,17 +4,15 @@ import React from 'react';
 import { FlatList, SafeAreaView, StyleSheet } from 'react-native';
 
 import chatRoomData from '~assets/dummy-data/Chats';
-import colors from '~components/Colors';
 import Message from '~components/Message';
 import MessageInput from '~components/MessageInput';
 
 const ChatRoomScreen = () => {
   const route = useRoute();
-
-  console.log(`Route data : ${route.params?.id}`);
-  console.log(`Route specified content : ${route.name}`);
-
   const navigation = useNavigation();
+
+  console.log(`Route data: ${route.params?.id}`);
+  console.log(`Route specified content: ${route.name}`);
 
   navigation.setOptions({ title: 'Elon Musk' });
 
@@ -32,7 +30,6 @@ const ChatRoomScreen = () => {
 
 const styles = StyleSheet.create({
   page: {
-    backgroundColor: colors.white,
     flex: 1,
   },
 });
