@@ -13,6 +13,7 @@ yarn.lock
 
 # neovide log files
 neovide*
+nohup.out
 
 # macOS
 .DS_Store
